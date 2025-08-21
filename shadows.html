@@ -29,12 +29,45 @@
     <h1>Shadows of Freedom</h1>
     <p>A horror-tinged myth that explores the darkness of divinity in human form.</p>
 
-    <h2>Characters</h2>
-    <p><a href="bela.html">Bela Nox Sacris</a></p>
-    <li><a href="noah.html">Noah</a></li>
-    <li><a href="alice.html">Alice Grey</a></li>
-    <li><a href="isaac.html">Isaac Lacresita</a></li>
-    <li><a href="ita.html">Ita Alcrest</a></li>
+  <h2>Characters</h2>
+<ul class="character-list">
+  <li><a href="bela.html">Bela Nox Sacris</a></li>
+  <li><a href="noah.html">Noah</a></li>
+  <li><a href="alice.html">Alice Grey</a></li>
+  <li><a href="isaac.html">Isaac Lacrestia</a></li>
+  <li><a href="ita.html">Ita Alcrest</a></li>
+</ul>
+
+<style>
+  .character-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  .character-list li {
+    margin: 0;
+  }
+
+  .character-list a {
+    text-decoration: none;
+    color: #ff4c4c; /* matches your theme red */
+    font-weight: bold;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .character-list a:hover {
+    color: #fff;
+    border-bottom: 2px solid #ff4c4c;
+  }
+</style>
+
 
     <!-- You can add more later: Noah, Darius, etc. -->
 
