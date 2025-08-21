@@ -24,12 +24,12 @@
 
     /* HERO / BANNER */
     .hero {
-      min-height: 60vh;
-      background: url('images/noah.png') center / cover no-repeat fixed; /* your banner image */
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-    }
+  position: relative;
+  background: url('images/noah.png') no-repeat center center;
+  background-size: contain;   /* shows full image */
+  background-color: #000;     /* fallback background */
+  height: 100vh;              /* full screen height */
+}
     .hero::after {
       content:"";
       position:absolute; inset:0;
