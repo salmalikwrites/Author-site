@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Isaac — Apocrypha</title>
+  <meta name="description" content="Isaac — exclusive child-era snippet from Apocrypha." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root { --fg: #0b0f19; --fg-invert: #ffffff; }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      color: #fff;
+      background: #0b0f19; /* dark fallback */
+    }
+
+    /* HERO / BANNER */
+    .hero {
+      min-height: 60vh;
+      background: url('images/isaac.png') center / cover no-repeat fixed; /* change 'cover' to 'contain' if you want the full image visible */
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+    }
+    .hero::after {
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+    }
+    .hero-inner {
+      position:relative; z-index:1;
+      max-width: 960px; width: 100%;
+      margin: 0 auto; padding: 24px 20px 48px;
+    }
+
+    /* Nav (top only) */
+    nav { background:#0b0f19; padding:12px 20px; display:flex; gap:24px; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; }
+    nav a::after { content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .25s; }
+    nav a:hover::after { transform:scaleX(1); transform-origin:left; }
+
+    /* Content blocks */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .glass { background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 20px; }
+    h1 { font-size: clamp(36px, 5vw, 56px); margin: 12px 0 8px; }
+    h2 { font-size: clamp(22px, 3.2vw, 30px); margin: 16px 0 8px; }
+    p { line-height: 1.65; color: #e6e6e6; }
+    .muted { color:#cfd8e3; }
+    blockquote { margin: 0; padding: 16px 18px; border-left: 4px solid rgba(255,255,255,.35); background: rgba(0,0,0,.35); border-radius: 8px; font-style: italic; }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:600; }
+    .btn-light { background:#fff; color:#000; }
+    .btn-ghost { border:1px solid rgba(255,255,255,.25); color:#fff; }
+    footer { padding: 40px 20px; color:#cfd8e3; text-align:center; }
+    a { color:#fff; }
+  </style>
+</head>
+
+<body>
+  <!-- nav (top only) -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="apocrypha.html">Apocrypha</a>
+  </nav>
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="hero-inner">
+      <p><a href="apocrypha.html">← Back to Apocrypha</a></p>
+      <h1 class="serif">Isaac</h1>
+      <p class="muted">The Antlered Healer — a storm held in his hands.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- short bio -->
+    <section class="glass">
+      <h2 class="serif">Who he is</h2>
+      <p>
+        A healer with careful hands and a ledger no one sees. Brown-haired, soft-spoken, he stitches wounds while arranging his own betrayals. 
+        The world calls him merciful; only he knows the lightning waiting beneath his calm. Restoration is his craft — and his mask.
+      </p>
+    </section>
+
+    <!-- exclusive child-era snippet -->
+    <section class="glass" style="margin-top:18px;">
+      <h2 class="serif">Exclusive Snippet (childhood)</h2>
+      <blockquote>
+        “Hold still,” he whispered, palms hovering over the splintered antler.  
+        Green motes lifted from his fingertips — shy fireflies — drifting into the cracks as if they remembered where bone should be.  
+        Somewhere beyond the trees, thunder murmured. He pretended not to hear it.
+      </blockquote>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="apocrypha.html">Back to Apocrypha</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Sal Malik
+  </footer>
+</body>
+</html>
