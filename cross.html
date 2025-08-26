@@ -1,18 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cross — Endbringer</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Cross — exclusive child-era snippet from Endbringer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --fg: #0b0f19; --fg-invert: #ffffff; }
+    body { margin:0; color:#fff; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif; }
+    .serif { font-family: "Crimson Text", Georgia, Cambria, "Times New Roman", Times, serif; }
+
+    /* Hero background */
+    .hero {
+      min-height: 60vh;
+      background: url('images/cross.png') center/cover no-repeat fixed;
+      position: relative;
+    }
+    .hero::after {
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+    }
+    .hero-inner { position:relative; z-index:1; max-width: 960px; margin: 0 auto; padding: 24px 20px 48px; }
+
+    /* Top nav */
+    nav { background:#0b0f19; padding:12px 20px; display:flex; gap:24px; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; }
+    nav a::after { content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .25s; }
+    nav a:hover::after { transform:scaleX(1); transform-origin:left; }
+
+    /* Content blocks */
+    .wrap { max-width: 960px; margin: 0 auto; padding: 32px 20px; }
+    .glass { background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 20px; }
+    h1 { font-size: clamp(36px, 5vw, 56px); margin: 12px 0 8px; }
+    h2 { font-size: clamp(22px, 3.2vw, 30px); margin: 16px 0 8px; }
+    p { line-height: 1.65; color: #e6e6e6; }
+    .muted { color:#cfd8e3; }
+    blockquote { margin: 0; padding: 16px 18px; border-left: 4px solid rgba(255,255,255,.35); background: rgba(0,0,0,.35); border-radius: 8px; font-style: italic; }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+    .btn { display:inline-block; padding:10px 14px; border-radius:10px; text-decoration:none; font-weight:600; }
+    .btn-ghost { border:1px solid rgba(255,255,255,.25); color:#fff; }
+    footer { padding: 40px 20px; color:#cfd8e3; text-align:center; }
+    a { color:#fff; }
+  </style>
 </head>
 <body>
+
+  <!-- nav (top only) -->
   <nav>
     <a href="index.html">Home</a>
     <a href="endbringer.html">Endbringer</a>
   </nav>
 
-  <header class="hero" style="background:url('images/cross.png') no-repeat center center/cover;">
+  <!-- hero -->
+  <header class="hero">
     <div class="hero-inner">
       <p><a href="endbringer.html">← Back to Endbringer</a></p>
       <h1 class="serif">Cross</h1>
@@ -21,14 +65,20 @@
   </header>
 
   <main class="wrap">
+    <!-- short bio -->
     <section class="glass">
       <h2 class="serif">Who he is</h2>
-      <p>Placeholder — add Cross’s description here.</p>
+      <p>
+        Placeholder — add Cross’s description here.
+      </p>
     </section>
 
+    <!-- exclusive child-era snippet -->
     <section class="glass" style="margin-top:18px;">
       <h2 class="serif">Exclusive Snippet (childhood)</h2>
-      <blockquote>“Placeholder snippet for Cross — to be replaced.”</blockquote>
+      <blockquote>
+        “Placeholder snippet for Cross — to be replaced.”
+      </blockquote>
       <div class="cta-row">
         <a class="btn btn-ghost" href="endbringer.html">Back to Endbringer</a>
       </div>
@@ -38,5 +88,6 @@
   <footer>
     © <script>document.write(new Date().getFullYear())</script> Sal Malik
   </footer>
+
 </body>
 </html>
