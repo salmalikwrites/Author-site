@@ -100,63 +100,96 @@
     </div>
   </section>
 
-  <!-- Books -->
- <section id="books" class="py-16 sm:py-24 border-t border-slate-200 bg-white">
+<!-- Books -->
+<section id="books" class="py-16 sm:py-24 border-t border-slate-200 bg-white">
   <div class="max-w-5xl mx-auto px-4 sm:px-6">
-    <h2 class="serif text-3xl sm:text-4xl font-bold mb-8">Books</h2>
-    <a href="apocrypha.html">Explore Apocrypha</a>
-
-  <!-- Standalones -->
-<h3 class="serif text-2xl font-semibold mb-4">Standalones</h3>
-<div class="grid md:grid-cols-2 gap-6 mb-12">
-  <a href="endbringer.html" class="block rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-lg transition">
-    <div class="md:flex">
-      <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
-        <img src="images/endbringer-cover.png" alt="Endbringer cover" class="w-full h-full object-cover" />
-      </figure>
-      <div class="p-6 md:w-2/3">
-        <h3 class="serif text-2xl font-semibold">Endbringer</h3>
-        <p class="mt-2 text-slate-600">
-          Four broken heroes are chosen by the Oracle to save the world from the Endbringer. Journey through a world of inherited burdens hammered by the iron will of fate.
-        </p>
-      </div>
+    <div class="flex items-end justify-between gap-4 mb-8">
+      <h2 class="serif text-3xl sm:text-4xl font-bold">Books</h2>
+      <!-- quick jump pills (optional) -->
+      <nav class="hidden sm:flex gap-2 text-sm">
+        <a href="#novellas" class="px-3 py-1.5 rounded-xl border border-slate-300 hover:bg-slate-50">Novellas</a>
+        <a href="#standalones" class="px-3 py-1.5 rounded-xl border border-slate-300 hover:bg-slate-50">Standalones</a>
+        <a href="#apocrypha" class="px-3 py-1.5 rounded-xl border border-slate-300 hover:bg-slate-50">Apocrypha</a>
+      </nav>
     </div>
-  </a>
-</div>
 
-
-   <!-- Series: Apocrypha -->
-<h3 class="serif text-2xl font-semibold mb-4">Series: Apocrypha</h3>
-<div class="grid md:grid-cols-2 gap-6 mb-12">
-  <a href="apocrypha.html" class="block group">
-    <article class="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition transform group-hover:scale-[1.02] group-hover:shadow-lg">
-      <div class="md:flex">
-        <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
-          <img src="images/eclipse.png" alt="Lunar eclipse with crimson light" class="w-full h-full object-cover transition group-hover:scale-105" />
-        </figure>
-        <div class="p-6 md:w-2/3">
-          <h3 class="serif text-2xl font-semibold">In the Shadows of Freedom</h3>
-          <p class="mt-2 text-slate-600">
-            A horror-tinged myth that explores the darkness of divinity in human form.
-          </p>
+    <!-- NOVELLAS (TOP) -->
+    <h3 id="novellas" class="serif text-2xl font-semibold mb-4">Novellas</h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <!-- Garden of Gothsemane (example card) -->
+      <a href="garden.html" class="block rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-lg transition">
+        <div class="md:flex">
+          <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
+            <img src="images/garden-cover.jpg" alt="Garden of Gothsemane cover" class="w-full h-full object-cover" />
+          </figure>
+          <div class="p-6 md:w-2/3">
+            <div class="flex items-center gap-2">
+              <h4 class="serif text-2xl font-semibold">Garden of Gothsemane</h4>
+              <span class="ml-1 inline-flex items-center text-xs px-2 py-0.5 rounded-full border border-slate-300">Teaser</span>
+            </div>
+            <p class="mt-2 text-slate-600">
+              A crucible of grief and grace told in three acts. Read a free teaser or follow the serial.
+            </p>
+          </div>
         </div>
-      </div>
-    </article>
-  </a>
-</div>
-<!-- Future books in Apocrypha (e.g. Paradise Lost) will slot in here -->
+      </a>
+
+      <!-- Another novella (placeholder) -->
+      <a href="#" class="block rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-lg transition">
+        <div class="md:flex">
+          <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
+            <img src="images/novella-placeholder.png" alt="Novella placeholder cover" class="w-full h-full object-cover" />
+          </figure>
+          <div class="p-6 md:w-2/3">
+            <h4 class="serif text-2xl font-semibold">Untitled Novella</h4>
+            <p class="mt-2 text-slate-600">Coming soon — a tight, brutal tale from the same mythic cosmos.</p>
+          </div>
+        </div>
+      </a>
     </div>
 
-    <!-- Novellas -->
-    <h3 class="serif text-2xl font-semibold mb-4">Novellas</h3>
-    <div class="grid md:grid-cols-2 gap-6">
-      <article class="rounded-3xl border border-slate-200 bg-white shadow-sm p-6">
-        <p class="text-slate-500 italic">Coming soon...</p>
-      </article>
+    <!-- STANDALONES -->
+    <h3 id="standalones" class="serif text-2xl font-semibold mb-4">Standalones</h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <a href="endbringer.html" class="block rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:shadow-lg transition">
+        <div class="md:flex">
+          <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
+            <img src="images/endbringer-cover.png" alt="Endbringer cover" class="w-full h-full object-cover" />
+          </figure>
+          <div class="p-6 md:w-2/3">
+            <h3 class="serif text-2xl font-semibold">Endbringer</h3>
+            <p class="mt-2 text-slate-600">
+              Four broken heroes are chosen by the Oracle to save the world from the Endbringer.
+              Journey through a world of inherited burdens hammered by the iron will of fate.
+            </p>
+          </div>
+        </div>
+      </a>
     </div>
 
+    <!-- SERIES: APOCRYPHA -->
+    <h3 id="apocrypha" class="serif text-2xl font-semibold mb-4">Series: Apocrypha</h3>
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <a href="apocrypha.html" class="block group">
+        <article class="rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden transition transform group-hover:scale-[1.02] group-hover:shadow-lg">
+          <div class="md:flex">
+            <figure class="md:w-1/3 aspect-[3/4] overflow-hidden">
+              <img src="images/eclipse.png" alt="Lunar eclipse with crimson light" class="w-full h-full object-cover transition group-hover:scale-105" />
+            </figure>
+            <div class="p-6 md:w-2/3">
+              <h3 class="serif text-2xl font-semibold">In the Shadows of Freedom</h3>
+              <p class="mt-2 text-slate-600">
+                A horror-tinged myth that explores the darkness of divinity in human form.
+              </p>
+            </div>
+          </div>
+        </article>
+      </a>
+      <!-- Future Apocrypha entries slot here -->
+    </div>
   </div>
 </section>
+
 
   <!-- Poetry / Essays -->
   <section id="poetry" class="py-16 sm:py-24">
