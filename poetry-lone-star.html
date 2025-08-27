@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journey of a Lone Star — Poetry Collection</title>
+  <meta name="description" content="Journey of a Lone Star — poems by Sal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .serif{font-family:"Crimson Text",Georgia,Cambria,"Times New Roman",Times,serif}
+    nav{background:#0b0f19;padding:12px 20px;display:flex;gap:24px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}
+    nav a:hover::after{transform:scaleX(1);transform-origin:left}
+    .layout{display:grid;grid-template-columns:280px 1fr;gap:20px;max-width:1100px;margin:0 auto;padding:24px 20px}
+    .sticky{position:sticky;top:0.75rem;align-self:start}
+    .panel{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:14px}
+    .muted{color:#cfd8e3}
+    .toc a{display:block;padding:8px 10px;border-radius:10px;text-decoration:none;color:#fff}
+    .toc a:hover{background:rgba(255,255,255,.06)}
+    .search{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff}
+    .poem{background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;margin-bottom:16px}
+    .poem h3{margin:0 0 8px;font-size:clamp(20px,3vw,26px)}
+    .poem .meta{margin-top:-2px;margin-bottom:10px;color:#cfd8e3;font-size:.9rem}
+    .poem article{white-space:pre-wrap}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+    .btn{display:inline-block;padding:6px 10px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;background:transparent}
+    @media (max-width: 900px){ .layout{grid-template-columns:1fr} .sticky{position:static} }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poetry.html">Poetry Collections</a>
+  </nav>
+
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sticky">
+      <div class="panel">
+        <h1 class="serif" style="margin:6px 0 4px">Journey of a Lone Star</h1>
+        <p class="muted">Pilgrimage, duty, and the night’s compass.</p>
+        <input id="search" class="search" type="search" placeholder="Search poems or lines…">
+        <div class="controls">
+          <button class="btn" id="expandAll">Expand all</button>
+          <button class="btn" id="collapseAll">Collapse all</button>
+        </div>
+        <div class="panel" style="padding:10px">
+          <strong class="serif" style="display:block;margin-bottom:6px">Contents</strong>
+          <nav id="toc" class="toc"></nav>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <section id="poems">
+      <!-- Example poem block (duplicate for each poem in this collection) -->
+      <div class="poem" data-title="Star of Ananke" data-tags="fate meter ananke">
+        <h3 id="star-of-ananke" class="serif">Star of Ananke</h3>
+        <div class="meta">Form: Iambic pentameter • Cycle: Lone Star</div>
+        <details open>
+          <summary class="muted">Read poem</summary>
+          <article class="serif">
+Embalmed in nature’s womb there lies a thread,
+It dangles forth in twilight’s mourned eclipse,
+Beyond the stars in heaven’s shadowed dread,
+Entwined within Ananke’s knowing lips.
+          </article>
+        </details>
+      </div>
+
+      <div class="poem" data-title="North by Ashen Light" data-tags="pilgrimage compass night">
+        <h3 id="north-by-ashen-light" class="serif">North by Ashen Light</h3>
+        <div class="meta">Form: Blank verse • Cycle: Lone Star</div>
+        <details>
+          <summary class="muted">Read poem</summary>
+          <article class="serif">
+I carried iron in my mouth for miles,
+the taste of oaths, magnetic, drawing north…
+          </article>
+        </details>
+      </div>
+
+      <!-- Add more .poem blocks here -->
+    </section>
+  </main>
+
+  <footer style="padding:36px 20px;text-align:center;color:#cfd8e3">
+    © <script>document.write(new Date().getFullYear())</script> Sal Malik
+  </footer>
+
+  <script>
+    // Build TOC from poem headings
+    const toc = document.getElementById('toc');
+    const poems = Array.from(document.querySelectorAll('.poem'));
+    toc.innerHTML = poems.map(p => {
+      const h = p.querySelector('h3');
+      return `<a href="#${h.id}">${h.textContent}</a>`;
+    }).join('');
+
+    // Search filter (titles + poem text)
+    const search = document.getElementById('search');
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      poems.forEach(p => {
+        const title = p.dataset.title.toLowerCase();
+        const tags  = (p.dataset.tags || '').toLowerCase();
+        const body  = p.querySelector('article').textContent.toLowerCase();
+        const match = !q || title.includes(q) || tags.includes(q) || body.includes(q);
+        p.style.display = match ? '' : 'none';
+      });
+    });
+
+    // Expand/Collapse all
+    const expandAll = document.getElementById('expandAll');
+    const collapseAll = document.getElementById('collapseAll');
+    expandAll.addEventListener('click', () => {
+      document.querySelectorAll('.poem details').forEach(d => d.open = true);
+    });
+    collapseAll.addEventListener('click', () => {
+      document.querySelectorAll('.poem details').forEach(d => d.open = false);
+    });
+  </script>
+</body>
+</html>
