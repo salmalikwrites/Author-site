@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Path of Flame and Light — Poetry Collection</title>
+  <meta name="description" content="Path of Flame and Light — a complete poetry collection by Sal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#fff;background:#0b0f19;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .serif{font-family:"Crimson Text",Georgia,Cambria,"Times New Roman",Times,serif}
+    /* Top nav */
+    nav{background:#0b0f19;position:sticky;top:0;z-index:50;padding:12px 20px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;gap:24px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}
+    nav a:hover::after{transform:scaleX(1);transform-origin:left}
+    /* Layout */
+    .layout{display:grid;grid-template-columns:280px 1fr;gap:20px;max-width:1100px;margin:0 auto;padding:24px 20px}
+    @media (max-width: 900px){ .layout{grid-template-columns:1fr} .sticky{position:static} }
+    .sticky{position:sticky;top:76px;align-self:start}
+    .panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px}
+    .muted{color:#cfd8e3}
+    /* Sidebar widgets */
+    .search{width:100%;padding:10px 12px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:#fff}
+    .controls{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+    .btn{display:inline-block;padding:6px 10px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid rgba(255,255,255,.25);color:#fff;background:transparent;cursor:pointer}
+    .toc a{display:block;padding:8px 10px;border-radius:10px;text-decoration:none;color:#fff}
+    .toc a:hover{background:rgba(255,255,255,.06)}
+    /* Poems */
+    .poem{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;margin-bottom:16px}
+    .poem h3{margin:0 0 6px;font-size:clamp(20px,3vw,26px)}
+    .poem .meta{margin-top:-2px;margin-bottom:10px;color:#cfd8e3;font-size:.9rem}
+    .poem details summary{cursor:pointer;list-style:none}
+    .poem details summary::-webkit-details-marker{display:none}
+    .poem article{white-space:pre-wrap}
+    /* Header band */
+    .header{max-width:1100px;margin:0 auto;padding:24px 20px}
+    .header h1{font-size:clamp(30px,4.5vw,44px);margin:6px 0}
+    .header p{color:#cfd8e3;margin:0}
+    footer{padding:36px 20px;color:#cfd8e3;text-align:center}
+  </style>
+</head>
+<body>
+  <!-- nav -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="poetry.html">Poetry Collections</a>
+  </nav>
+
+  <!-- collection header -->
+  <header class="header">
+    <h1 class="serif">Path of Flame and Light</h1>
+    <p class="muted">A completed cycle of ember, illumination, and the pilgrim heart.</p>
+  </header>
+
+  <main class="layout">
+    <!-- Sidebar -->
+    <aside class="sticky">
+      <div class="panel">
+        <input id="search" class="search" type="search" placeholder="Search poems or lines…">
+        <div class="controls">
+          <button class="btn" id="expandAll">Expand all</button>
+          <button class="btn" id="collapseAll">Collapse all</button>
+        </div>
+      </div>
+      <div class="panel">
+        <strong class="serif" style="display:block;margin-bottom:6px">Contents</strong>
+        <nav id="toc" class="toc"></nav>
+      </div>
+    </aside>
+
+    <!-- Poems -->
+    <section id="poems">
+      <!-- Duplicate this .poem block for each poem -->
+      <div class="poem" data-title="Ember Catechism" data-tags="flame light catechism">
+        <h3 id="ember-catechism" class="serif">Ember Catechism</h3>
+        <div class="meta">Form: (e.g., Sonnet / Blank verse) • Cycle: Path of Flame and Light</div>
+        <details open>
+          <summary class="muted">Read poem</summary>
+          <article class="serif">
+First line…
+Second line…
+Third line…
+Fourth line…
+          </article>
+        </details>
+      </div>
+
+      <div class="poem" data-title="Ashes for the Dawn" data-tags="ashes dawn light">
+        <h3 id="ashes-for-the-dawn" class="serif">Ashes for the Dawn</h3>
+        <div class="meta">Form: — • Cycle: Path of Flame and Light</div>
+        <details>
+          <summary class="muted">Read poem</summary>
+          <article class="serif">
+(Place poem text here)
+          </article>
+        </details>
+      </div>
+
+      <!-- Add more .poem blocks here -->
+    </section>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Sal Malik
+  </footer>
+
+  <script>
+    // Build TOC
+    const toc = document.getElementById('toc');
+    const poems = Array.from(document.querySelectorAll('.poem'));
+    toc.innerHTML = poems.map(p => {
+      const h = p.querySelector('h3');
+      return `<a href="#${h.id}">${h.textContent}</a>`;
+    }).join('');
+
+    // Search filter
+    const search = document.getElementById('search');
+    search.addEventListener('input', () => {
+      const q = search.value.trim().toLowerCase();
+      poems.forEach(p => {
+        const title = p.dataset.title?.toLowerCase() || '';
+        const tags  = p.dataset.tags?.toLowerCase() || '';
+        const body  = p.querySelector('article').textContent.toLowerCase();
+        const match = !q || title.includes(q) || tags.includes(q) || body.includes(q);
+        p.style.display = match ? '' : 'none';
+      });
+    });
+
+    // Expand / Collapse all
+    const expandAll = document.getElementById('expandAll');
+    const collapseAll = document.getElementById('collapseAll');
+    expandAll.addEventListener('click', () => {
+      document.querySelectorAll('.poem details').forEach(d => d.open = true);
+    });
+    collapseAll.addEventListener('click', () => {
+      document.querySelectorAll('.poem details').forEach(d => d.open = false);
+    });
+  </script>
+</body>
+</html>
