@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Poetry — Collections</title>
+  <meta name="description" content="Poetry collections by Sal." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    .serif{font-family:"Crimson Text",Georgia,Cambria,"Times New Roman",Times,serif}
+    nav{background:#0b0f19;padding:12px 20px;display:flex;gap:24px}
+    nav a{color:#fff;text-decoration:none;font-weight:600;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-4px;width:100%;height:2px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .25s}
+    nav a:hover::after{transform:scaleX(1);transform-origin:left}
+    .hero{min-height:24vh;background:#0b0f19}
+    .hero-inner{max-width:980px;margin:0 auto;padding:24px 20px 36px}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 20px}
+    .card{display:block;border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:16px;text-decoration:none;color:#fff;background:rgba(255,255,255,.03)}
+    .card:hover{background:rgba(255,255,255,.06)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+    .muted{color:#cfd8e3}
+    footer{padding:36px 20px;color:#cfd8e3;text-align:center}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#poetry">Back to Poetry</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <h1 class="serif">Poetry Collections</h1>
+      <p class="muted">Browse by cycle. Individual poems live inside each collection.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <a class="card" href="poetry-lone-star.html">
+        <h2 class="serif" style="margin:0 0 6px">Journey of a Lone Star</h2>
+        <p class="muted" style="margin:0">Pilgrimage, duty, and the long night’s compass.</p>
+      </a>
+      <a class="card" href="poetry-path-of-flame.html">
+        <h2 class="serif" style="margin:0 0 6px">Path of Flame and Light</h2>
+        <p class="muted" style="margin:0">Quiet rooms; light, bread, and memory.</p>
+      </a>
+      <a class="card" href="poetry-lem-clav.html">
+        <h2 class="serif" style="margin:0 0 6px">Lemegeton Clavicula Sal</h2>
+        <p class="muted" style="margin:0">Faith, fracture, and vows under hidden faces.</p>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    © <script>document.write(new Date().getFullYear())</script> Sal Malik
+  </footer>
+</body>
+</html>
